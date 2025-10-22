@@ -19,6 +19,6 @@ const updateUserData = (data) => {
 <template>
   <div class="wrapper">
     <CurrentUser :user="user" />
-    <ProfileForm :user="user" @update="updateUserData" />
+    <ProfileForm :original-user="user" @update="updateUserData" />
   </div>
 </template>

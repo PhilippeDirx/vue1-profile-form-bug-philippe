@@ -4,12 +4,13 @@ import { ref, unref } from "vue";
 const emit = defineEmits(["update"]);
 
 const props = defineProps({
-  user: {
+  originalUser: {
     type: Object,
     required: true,
   },
 });
-const user = ref(props.user);
+const tmpUser = JSON.parse(JSON.stringify(props.originalUser));
+const user = ref(tmpUser);
 const update = () => {
   emit("update", { ...unref(user) });
 };
